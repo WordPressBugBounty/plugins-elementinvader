@@ -16,7 +16,7 @@
  * Plugin Name:       Element Invader - Elementor Template Kits Library
  * Plugin URI:        https://elementinvader.com
  * Description:       ElementInvader offers premium library of one click ready and free Elementor templates from https://elementinvader.com/ service.
- * Version:           1.2.3
+ * Version:           1.2.4
  * Author:            ElementInvader
  * Author URI:        https://elementinvader.com
  * License:           GPL-2.0+
@@ -30,8 +30,8 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (! defined('WPINC')) {
+    die;
 }
 
 
@@ -40,38 +40,40 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'ELEMENTINVADER_VERSION', '1.2.3' );
-define( 'ELEMENTINVADER_NAME', 'elementinvader' );
-define( 'ELEMENTINVADER_PATH', plugin_dir_path( __FILE__ ) );
-define( 'ELEMENTINVADER_URL', plugin_dir_url( __FILE__ ) );
-define( 'ELEMENTINVADER_WEBSITE', 'https://elementinvader.com/' );
+define('ELEMENTINVADER_VERSION', '1.2.4');
+define('ELEMENTINVADER_NAME', 'elementinvader');
+define('ELEMENTINVADER_PATH', plugin_dir_path(__FILE__));
+define('ELEMENTINVADER_URL', plugin_dir_url(__FILE__));
+define('ELEMENTINVADER_WEBSITE', 'https://elementinvader.com/');
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-elementinvader-activator.php
  */
-function activate_elementinvader() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-elementinvader-activator.php';
-	Elementinvader_Activator::activate();
+function activate_elementinvader()
+{
+    require_once plugin_dir_path(__FILE__) . 'includes/class-elementinvader-activator.php';
+    Elementinvader_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-elementinvader-deactivator.php
  */
-function deactivate_elementinvader() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-elementinvader-deactivator.php';
-	Elementinvader_Deactivator::deactivate();
+function deactivate_elementinvader()
+{
+    require_once plugin_dir_path(__FILE__) . 'includes/class-elementinvader-deactivator.php';
+    Elementinvader_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_elementinvader' );
-register_deactivation_hook( __FILE__, 'deactivate_elementinvader' );
+register_activation_hook(__FILE__, 'activate_elementinvader');
+register_deactivation_hook(__FILE__, 'deactivate_elementinvader');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-elementinvader.php';
+require plugin_dir_path(__FILE__) . 'includes/class-elementinvader.php';
 
 /**
  * Begins execution of the plugin.
@@ -82,10 +84,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-elementinvader.php';
  *
  * @since    1.0.0
  */
-function run_elementinvader() {
+function run_elementinvader()
+{
 
-	$plugin = new Elementinvader();
-	$plugin->run();
-
+    $plugin = new Elementinvader();
+    $plugin->run();
 }
 run_elementinvader();

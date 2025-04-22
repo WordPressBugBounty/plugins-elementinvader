@@ -836,7 +836,7 @@ function wmvc_select_option($field_name, $options = array(), $selected = NULL, $
     if(is_array($options) && count($options) > 0)
     foreach($options as $key=>$val)
     {
-        $output.= '<option value="'.$key.'" '.($selected==$key?'selected':'').'>'.$val.'</option>';
+        $output.= '<option value="'.$key.'" '.($selected==$key&&$selected != ''?'selected':'').'>'.$val.'</option>';
     }
 
     $output.= '</select>';
@@ -952,7 +952,7 @@ function wmvc_upload_file($field_name, $file_id)
         </a>
         <a class="delete-custom-img <?php if ( ! $you_have_file  ) { echo 'hidden'; } ?>" 
         href="#">
-            <?php echo esc_html__('Remove file','wmvc_win') ?>
+            <?php echo esc_html__('Remove all files','wmvc_win') ?>
         </a>
     </p>
     <?php //endif; ?>
@@ -1046,7 +1046,7 @@ function wmvc_upload_multiple($field_name, $image_ids='')
         </a>
         <a class="button button-secondary delete-custom-img <?php if ( ! $you_have_img  ) { echo 'hidden'; } ?>" 
         href="#">
-            <?php echo esc_html__('Remove images','wmvc_win') ?>
+            <?php echo esc_html__('Remove all images','wmvc_win') ?>
         </a>
     </p>
     <?php //endif; ?>
@@ -1150,6 +1150,8 @@ function wmvc_xss_clean($data)
 
     // Remove namespaced elements (we do not need them)
     $data = preg_replace('#</*\w+:\w[^>]*+>#i', '', $data);
+    $data = preg_replace("/(\b1=1\b|\) OR\b)/", "", $data);
+    $data = preg_replace("/alert\(/", "", $data);
 
     do
     {
