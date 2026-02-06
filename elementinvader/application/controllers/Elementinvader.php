@@ -49,12 +49,19 @@ class Elementinvader_index extends Winter_MVC_Controller {
     
 	public function import_pages()
 	{       
+
+        if ( ! current_user_can( 'administrator' ) ) {
+            exit();
+        }
+        
+        check_ajax_referer('elementinvader_secure_install', 'elementinvader_secure');
+
         //ob_clean();
         $results = array();
         $results['status'] = 'success';
 
-        $template = $this->input->post_get('template');
-        $page_title = $this->input->post_get('page_title');
+        $template = sanitize_text_field($this->input->post_get('template'));
+        $page_title = sanitize_text_field($this->input->post_get('page_title'));
         $template_title = elementinvader_template_data($template, 'title');
 
         // Check for required plugins
@@ -199,6 +206,12 @@ class Elementinvader_index extends Winter_MVC_Controller {
 	public function add_page()
 	{       
 
+        if ( ! current_user_can( 'administrator' ) ) {
+            exit();
+        }
+        
+        check_ajax_referer('elementinvader_secure_install', 'elementinvader_secure');
+        
         ob_clean();
         
         $results = array();

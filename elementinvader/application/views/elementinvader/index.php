@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
 
         // Assign handlers immediately after making the request,
         // and remember the jqxhr object for this request
-        var jqxhr = $.post( "<?php echo admin_url('admin-ajax.php?action=elementinvader_action&function=import_pages&page=elementinvader'); ?>", data_form, function(data) {
+        var jqxhr = $.post( "<?php echo admin_url('admin-ajax.php?action=elementinvader_action&function=import_pages&page=elementinvader&elementinvader_secure='.wp_create_nonce( 'elementinvader_secure_install' )); ?>", data_form, function(data) {
         
             if(data.status == 'success')
             {
@@ -170,7 +170,7 @@ jQuery(document).ready(function($) {
 
         // Assign handlers immediately after making the request,
         // and remember the jqxhr object for this request
-        var jqxhr = $.post( "<?php echo admin_url('admin-ajax.php?action=elementinvader_action&function=add_page&page=elementinvader'); ?>", data_form, function(data) {
+        var jqxhr = $.post( "<?php echo admin_url('admin-ajax.php?action=elementinvader_action&function=add_page&page=elementinvader&elementinvader_secure='.wp_create_nonce( 'elementinvader_secure_install' )); ?>", data_form, function(data) {
             
             if(data.status == 'success')
             {

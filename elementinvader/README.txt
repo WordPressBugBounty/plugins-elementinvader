@@ -1,10 +1,10 @@
-=== Element Invader - Elementor Template Kits Library ===
+=== Element Invader - Template Kits for Elementor ===
 Contributors: elementinvader
 Donate link: elementinvader.com 
 Tags: template kits, elementor templates, elementor addon, elementor addons, elementor
 Requires at least: 5.6
-Tested up to: 6.8
-Stable tag: 1.2.4
+Tested up to: 6.9
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,12 @@ Feel free to open support ticket in dashboard so we can take a look.
 1. ElementInvader Elementor Templates
 
 == Changelog ==
+
+= 1.2.5 =
+* Security improvements
+
+= 1.2.4 =
+* Php compatibility issues
 
 = 1.2.3 =
 * Redesign

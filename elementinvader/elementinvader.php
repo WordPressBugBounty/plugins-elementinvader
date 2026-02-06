@@ -13,10 +13,10 @@
  * @package           Elementinvader
  *
  * @wordpress-plugin
- * Plugin Name:       Element Invader - Elementor Template Kits Library
+ * Plugin Name:       Element Invader - Template Kits for Elementor
  * Plugin URI:        https://elementinvader.com
  * Description:       ElementInvader offers premium library of one click ready and free Elementor templates from https://elementinvader.com/ service.
- * Version:           1.2.4
+ * Version:           1.2.5
  * Author:            ElementInvader
  * Author URI:        https://elementinvader.com
  * License:           GPL-2.0+
@@ -24,7 +24,7 @@
  * Text Domain:       elementinvader
  * Domain Path:       /languages
  * 
- * Elementor tested up to: 3.15.2
+ * Elementor tested up to: 3.29.0
  * Elementor Pro tested up to: 3.16.2
  * 
  */
@@ -40,7 +40,7 @@ if (! defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('ELEMENTINVADER_VERSION', '1.2.4');
+define('ELEMENTINVADER_VERSION', '1.2.5');
 define('ELEMENTINVADER_NAME', 'elementinvader');
 define('ELEMENTINVADER_PATH', plugin_dir_path(__FILE__));
 define('ELEMENTINVADER_URL', plugin_dir_url(__FILE__));
